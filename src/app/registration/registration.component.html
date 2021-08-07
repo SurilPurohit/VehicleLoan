@@ -20,7 +20,7 @@
             </button> &nbsp; &nbsp; &nbsp; &nbsp; 
           
             <div class="collapse navbar-collapse" id="navbarNav">
-<<<<<<< HEAD
+
               <ul class="navbar-nav">
                 <li class="nav-item active ">
                   <a class="text-white" href="#"> <strong>Home</strong> <span class="sr-only">(current)</span></a>
@@ -46,7 +46,6 @@
                   <a class="text-white" href="#"> <strong>Register </strong><span class="sr-only">(current)</span></a>
                 </li>
               </ul>
-=======
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" routerLink="/Home">Home <span class="sr-only">(current)</span></a>
@@ -77,7 +76,6 @@
                         <a class="nav-link" routerLink="/Register">Register <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
->>>>>>> 3f24dcb3f27a958056a1b3d42ded47068e020882
             </div>
             </nav> <br><br><br>
         <div>
@@ -88,7 +86,6 @@
                 <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
                     <div class="form-group">
-<<<<<<< HEAD
                         <label for="inputName"><b>FULL NAME</b></label>
                         <input type="text" style="width:50%" class="form-control" id="inputName" placeholder="Enter Full Name" required>
                     </div>
@@ -111,7 +108,7 @@
                     <div class="form-group">
                         <label for="inputAge"><b>AGE</b></label>
                         <input type="number" style="width:50%" class="form-control" id="inputAge" placeholder="Enter Age" required>
-=======
+
                         <label for="name">Full Name</label>
                         <input type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Full Name">
                         <span class="error" *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.touched && registerForm.controls.name.dirty)"> Type a valid name </span>
@@ -145,7 +142,7 @@
                         <label for="inputAge">Age</label>
                         <input type="number" class="form-control" id="age" name="age" formControlName="age" placeholder="Enter Age">
                         <span class="error" *ngIf="registerForm.controls.age.invalid && (registerForm.controls.age.touched && registerForm.controls.age.dirty)"> Type a valid name </span>
->>>>>>> 3f24dcb3f27a958056a1b3d42ded47068e020882
+
                     </div>
 
 
@@ -153,18 +150,16 @@
 
 
                     <div class="form-group">
-<<<<<<< HEAD
                         <label for="inputGender"><b>GENDER</b></label>
                         <select class="form-control" style="width:50%" id="inputGender" required>
                             <option>Select</option>
                             <option>Male</option>
                             <option>Female</option>
                             <option>Others</option>
-=======
+                        </select>
                         <label for="gender">Gender</label>
                         <select class="form-control" id="gender" name="gender" formControlName="gender">
                             <option *ngFor = "let g of gender">{{g}}</option>
->>>>>>> 3f24dcb3f27a958056a1b3d42ded47068e020882
                         </select>
                     </div>
 
@@ -172,14 +167,14 @@
                     <!-- MULTIPLE SELECT OPTIONS -->
 
                     <div class="form-group">
-<<<<<<< HEAD
+
                         <label for="inputMobile"><b>MOBILE NUMBER</b></label>
                         <input type="text" style="width:50%" class="form-control" id="inputMobile" placeholder="Enter Mobile No" required>
-=======
+
                         <label for="mobile">Mobile No.</label>
                         <input type="text" class="form-control" id="mobile" name="mobile" formControlName="mobile" placeholder="Enter Mobile No.">
                         <span class="error" *ngIf="registerForm.controls.mobile.invalid && (registerForm.controls.mobile.touched && registerForm.controls.mobile.dirty)"> Type a valid 10 digit mobile no  </span>
->>>>>>> 3f24dcb3f27a958056a1b3d42ded47068e020882
+
                     </div>
                 <br>
 
@@ -188,17 +183,16 @@
 
                     <div class="form-check">
                         <label class="form-check-label">
-<<<<<<< HEAD
+
                             <input type="checkbox" class="form-check-input" required>
                             
-=======
+
                             <input type="checkbox" class="form-check-input" id="tick" name="tick" formControlName="tick">
->>>>>>> 3f24dcb3f27a958056a1b3d42ded47068e020882
+
                             By registering an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
                         </label>
                     </div>
 
-<<<<<<< HEAD
                     <br>
                     <button type="Register" class="btn btn-primary text-center">REGISTER</button><br>
                     
@@ -206,17 +200,13 @@
                     <br>
                     <p> Already have an Account ? <a href="login.html" style="color:
                     red"> <br><br><b>Login </b></a></p>
-=======
+
 
                     <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button><br>
                     
                     <!-- Goto Login Page-->
                     <br>
                     <p> Already have an Account ? <a routerLink="/Login" style="color:red"> Login </a></p>
->>>>>>> 3f24dcb3f27a958056a1b3d42ded47068e020882
-
-
-
                 </form>
             </div>
         </div>
