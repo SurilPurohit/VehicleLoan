@@ -53,92 +53,92 @@
       
   <div  class="container">
   <div class="jumbotron">
-  <form>
+  <form [formGroup]="userForm" (ngSubmit)="post_api(userForm.value)">
 
     <div class="form-group">
       <label for="inputName"><b>FULL NAME</b></label>
-      <input type="text" class="form-control" id="inputName" placeholder="Enter Full Name">
+      <input type="text" style="width:40%" class="form-control" id="uname" name="uname" formControlName="uname" placeholder="Enter Full Name">
+      <span class="error" *ngIf="userForm.controls.uname.invalid && (userForm.controls.uname.touched && userForm.controls.uname.dirty)"> Type a valid name </span>
     </div>
 
     <div class="form-group">
       <label for="inputAge"><b>AGE</b></label>
-      <input type="number" class="form-control" id="inputAge" placeholder="Enter Age">
+      <input type="number" style="width:40%" class="form-control" id="uage" name="uage" formControlName="uage" placeholder="Enter uage">
+      <span class="error" *ngIf="userForm.controls.uage.invalid && (userForm.controls.uage.touched && userForm.controls.uage.dirty)"> Type a valid name </span>
     </div>
 
     <!-- EMAIL SUBMISSION -->
 
-  <div class="form-group">
-    <label for="inputEmail"><b>EMAIL ADDRESS</b></label>
-    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
+    <div class="form-group">
+      <label for="inputEmail"><b>EMAIL ADDRESS</b></label>
+      <input type="email" style="width:40%" class="form-control" id="uemail" name="uemail" formControlName="uemail" aria-describedby="emailHelp" placeholder="Enter email">
+      <span class="error" *ngIf="userForm.controls.uemail.invalid && (userForm.controls.uemail.touched && userForm.controls.uemail.dirty)"> Type a valid Email ID </span>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
 
-  <!-- PASSWORD -->
+    <!-- PASSWORD -->
 
+    <div class="form-group">
+      <label for="inputPassword"><b>PASSWORD</b></label>
+      <input type="password" style="width:40%" class="form-control" id="upassword" name="upassword" formControlName="upassword" placeholder="Enter Password">
+      <span class="error" *ngIf="userForm.controls.upassword.invalid && (userForm.controls.upassword.touched && userForm.controls.upassword.dirty)"> Type a valid password </span>
+    </div>
 
-  <div class="form-group">
-    <label for="inputPassword"><b>PASSWORD</b></label>
-    <input type="password" class="form-control" id="inputPassword" placeholder="Enter Password">
-  </div>
+    <!-- DROPDOWN SELECT -->
 
-  <!-- DROPDOWN SELECT -->
-
-
-  <div class="form-group">
-    <label for="inputGender"><b>GENDER</b></label>
-    <select class="form-control" id="inputGender">
-      <option>Select</option>
-      <option>Male</option>
-      <option>Female</option>
-      <option>Others</option>
-    </select>
-  </div>
+    <div class="form-group">
+      <label for="inputGender"><b>GENDER</b></label>
+      <select class="form-control" id="ugender" name="ugender" formControlName="ugender">
+        <option *ngFor = "let g of ugender">{{g}}</option>
+      </select>
+    </div>
 
 
-  <!-- MULTIPLE SELECT OPTIONS -->
+    <!-- MULTIPLE SELECT OPTIONS -->
 
-  <div class="form-group">
-    <label for="inputMobile"><b>MOBILE NUMBER</b></label>
-    <input type="text" class="form-control" id="inputMobile" placeholder="Enter Mobile No.">
-  </div>
+    <div class="form-group">
+      <label for="inputMobile"><b>MOBILE NUMBER</b></label>
+      <input type="text" style="width:40%" class="form-control" id="umobile" name="umobile" formControlName="umobile" placeholder="Enter Mobile No.">
+      <span class="error" *ngIf="userForm.controls.umobile.invalid && (userForm.controls.umobile.touched && userForm.controls.umobile.dirty)"> Type a valid 10 digit mobile no  </span>
+    </div>
 
 
 
-  <!-- TEXT AREA -->
+    <!-- TEXT AREA -->
 
-  <div class="form-group">
-    <label for="inputState"><b>STATE</b></label>
-    <input type="text" class="form-control" id="inputState" placeholder="Enter State">
-  </div>
+    <div class="form-group">
+      <label for="inputState"><b>STATE</b></label>
+      <input type="text" style="width:40%" class="form-control" id="ustate" name="ustate" formControlName="ustate" placeholder="Enter State name">
+      <span class="error" *ngIf="userForm.controls.ustate.invalid && (userForm.controls.ustate.touched && userForm.controls.ustate.dirty)"> Type a valid state name  </span>
+    </div>
 
-  <div class="form-group">
-    <label for="inputCity"><b>CITY</b></label>
-    <input type="text" class="form-control" id="inputCity" placeholder="Enter City">
-  </div>
+    <div class="form-group">
+      <label for="inputCity"><b>CITY</b></label>
+      <input type="text" style="width:40%" class="form-control" id="ucity" name="ucity" formControlName="ucity" placeholder="Enter City name">
+      <span class="error" *ngIf="userForm.controls.ucity.invalid && (userForm.controls.ucity.touched && userForm.controls.ucity.dirty)"> Type a valid city name  </span>
+    </div>
 
-  <div class="form-group">
-    <label for="inputPin"><b>PINCODE</b></label>
-    <input type="number" class="form-control" id="inputPin" placeholder="Enter Pincode">
-  </div>
+    <div class="form-group">
+      <label for="inputPin"><b>PINCODE</b></label>
+      <input type="number" class="form-control"  id="upin" name="upin" formControlName="upin" placeholder="Enter Pincode">
+    </div>
 
-  <div class="form-group">
-    <label for="inputAddress"><b>ADDRESS</b></label>
-    <textarea class="form-control" id="inputAddress" rows="3"></textarea>
-  </div><br>
-
-
+    <div class="form-group">
+      <label for="inputAddress"><b>ADDRESS</b></label>
+      <input type="text" class="form-control" id="uaddress" name="uaddress" formControlName="uaddress" rows="3">
+    </div><br>
 
   <!-- CHECK BUTTON -->
 
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="checkbox" class="form-check-input">
-      I hereby declare everything mentioned above is true.
-    </label>
-  </div><br>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" id="tick" name="tick" formControlName="tick">
+        I hereby declare everything mentioned above is true.
+      </label>
+    </div><br>
 
 
-  <button type="submit" class="btn btn-primary">SUBMIT</button>
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">SUBMIT</button>
 
 
 </form>
@@ -150,7 +150,7 @@
   <span style="color:white"> &nbsp; &nbsp; Copyright © 2021 
     <a class= "text-white" href="#">* VLS *</a></span>
   <li class="nav-item ml-auto">
-    <a class="text-white "  aria-current="page" href="#">Privacy Policy</a>
+    <a class="text-white "  aria-current="puage" href="#">Privacy Policy</a>
   </li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
   <li class="nav-item">
     <a class="text-white" href="#">Terms and conditions</a>
