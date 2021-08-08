@@ -1,12 +1,11 @@
 
 .jumbotron {
-    background-image: url("https://www.hagueapostille.co.uk/sites/default/files/styles/large/public/magnify-checking-banner800.jpg?itok=eeoyb-N6");
-    min-height: 100%;
-    min-width:70%;
+    background-image: url("https://media.istockphoto.com/vectors/car-loan-or-vehicle-rental-concept-vector-id1255013863?k=6&m=1255013863&s=612x612&w=0&h=h7Jty48_ClA7-8GiBcv0aWH5Msqa6m8QzS034FUTdWE=");
     background-repeat: no-repeat;
-    background-position: right  ;
+    background-position: 100% 0 ;
     
 }
+
 
 .error{
     color: red;

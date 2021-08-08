@@ -13,71 +13,47 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-md bg-dark py-3 fixed-top">
-            <a class="navbar-brand text-danger " href="#"><strong>Vehicle Loan</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button> &nbsp; &nbsp; &nbsp; &nbsp; 
+      <nav class="navbar navbar-expand-lg navbar-md bg-dark py-3 fixed-top">
+        <a class="navbar-brand text-danger " href="#"><strong>VEHICLE LOAN</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> &nbsp; &nbsp; &nbsp; &nbsp; 
+      
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active ">
+              <a class="text-white" routerLink="/Home"> <strong>Home</strong> <span class="sr-only">(current)</span></a>
+            </li>
+          </ul> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="text-white" routerLink="/Aboutus"><strong>About Us</strong> <span class="sr-only">(current)</span></a>
+            </li>
+          </ul> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="text-white" routerLink="/Emicalc"> <strong>EMI Calculator</strong> <span class="sr-only">(current)</span></a>
+            </li>
+          </ul> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="text-white" routerLink="/ApplyLoan"><strong>Apply Loan</strong> <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="text-white" routerLink="/Login"> <strong>Login</strong> <span class="sr-only">(current)</span></a>
+              
+            </li>
+          </ul> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          <ul class="nav navbar-nav ">
+            <li class="nav-item active">
+              <a class="text-white" routerLink="/Register"> <strong>Register </strong><span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
           
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-              <ul class="navbar-nav">
-                <li class="nav-item active ">
-                  <a class="text-white" href="#"> <strong>Home</strong> <span class="sr-only">(current)</span></a>
-                </li>
-              </ul> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="text-white" href="#"><strong>About Us</strong> <span class="sr-only">(current)</span></a>
-                </li>
-              </ul> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="text-white" href="#"> <strong>EMI Calculator</strong> <span class="sr-only">(current)</span></a>
-                </li>
-              </ul>
-              <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="text-white" href="#"> <strong>Login</strong> <span class="sr-only">(current)</span></a>
-                </li>
-              </ul> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <ul class="nav navbar-nav ">
-                <li class="nav-item active">
-                  <a class="text-white" href="#"> <strong>Register </strong><span class="sr-only">(current)</span></a>
-                </li>
-              </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/Home">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">About us <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/Emicalc">EMI calculator <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/ApplyLoan">Apply Loan <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/Login">Login <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/Register">Register <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-            </nav> <br><br><br>
+        </div>
+        </nav> <br><br><br>
         <div>
             <br><h3>&nbsp; &nbsp;REGISTRATION</h3><br>
         </div>
@@ -86,95 +62,57 @@
                 <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
                     <div class="form-group">
-                        <label for="inputName"><b>FULL NAME</b></label>
-                        <input type="text" style="width:50%" class="form-control" id="inputName" placeholder="Enter Full Name" required>
+                      <label for="inputName"><b>FULL NAME</b></label>
+                      <input type="text" style="width:40%" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Full Name">
+                      <span class="error" *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.touched && registerForm.controls.name.dirty)"> Type a valid name </span>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputName"><b>USERNAME</b></label>
-                        <input type="text" style="width:50%" class="form-control" id="inputName" placeholder="Enter Username" required>
+                      <label for="inputName"><b>USERNAME</b></label>
+                      <input type="text" style="width:40%" class="form-control" id="uname" name="uname" formControlName="uname" placeholder="Enter Username">
+                      <span class="error" *ngIf="registerForm.controls.uname.invalid && (registerForm.controls.uname.touched && registerForm.controls.uname.dirty)"> Type a valid user name </span>
                     </div>
 
                     <div class="form-group">
-                    <label for="inputEmail"><b>EMAIL ADDRESS</b></label>
-                    <input type="email" style="width:50%" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter Email" required>
+                      <label for="inputEmail"><b>EMAIL ADDRESS</b></label>
+                      <input type="email" style="width:40%" class="form-control" id="email" name="email" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+                      <span class="error" *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.touched && registerForm.controls.email.dirty)"> Type a valid Email ID </span>
                     </div>
                     
                     <div class="form-group">
                         <label for="inputPassword"><b>PASSWORD</b></label>
-                        <input type="password" style="width:50%" class="form-control" id="inputPassword" placeholder="Enter Password" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputAge"><b>AGE</b></label>
-                        <input type="number" style="width:50%" class="form-control" id="inputAge" placeholder="Enter Age" required>
-
-                        <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Full Name">
-                        <span class="error" *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.touched && registerForm.controls.name.dirty)"> Type a valid name </span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputName">Username</label>
-                        <input type="text" class="form-control" id="uname" name="uname" formControlName="uname" placeholder="Enter Username">
-                        <span class="error" *ngIf="registerForm.controls.uname.invalid && (registerForm.controls.uname.touched && registerForm.controls.uname.dirty)"> Type a valid user name </span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputEmail">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
-                        <span class="error" *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.touched && registerForm.controls.email.dirty)"> Type a valid Email ID </span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="inputPassword">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" formControlName="password" placeholder="Enter Password">
+                        <input type="password" style="width:40%" class="form-control" id="password" name="password" formControlName="password" placeholder="Enter Password">
                         <span class="error" *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.touched && registerForm.controls.password.dirty)"> Type a valid password </span>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputcPassword">Password</label>
-                        <input type="password" class="form-control" id="cpassword" name="cpassword" formControlName="cpassword" placeholder="Re-Enter Password">
+                      <label for="inputPassword"><b>CONFIRM PASSWORD</b></label>
+                      <input type="password" style="width:40%" class="form-control" id="cpassword" name="cpassword" formControlName="cpassword" placeholder="Re-Enter Password">
                         <span class="error" *ngIf="registerForm.controls.cpassword.invalid && (registerForm.controls.cpassword.touched && registerForm.controls.cpassword.dirty)"> Passwords do not match </span>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputAge">Age</label>
-                        <input type="number" class="form-control" id="age" name="age" formControlName="age" placeholder="Enter Age">
+                        <label for="inputAge"><b>AGE</b></label>
+                        <input type="number" style="width:40%" class="form-control" id="age" name="age" formControlName="age" placeholder="Enter Age">
                         <span class="error" *ngIf="registerForm.controls.age.invalid && (registerForm.controls.age.touched && registerForm.controls.age.dirty)"> Type a valid name </span>
-
                     </div>
-
 
                     <!-- DROPDOWN SELECT -->
 
-
                     <div class="form-group">
                         <label for="inputGender"><b>GENDER</b></label>
-                        <select class="form-control" style="width:50%" id="inputGender" required>
-                            <option>Select</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Others</option>
+                        <select class="form-control" style="width:40%" id="gender" name="gender" formControlName="gender">
+                          <option *ngFor = "let g of gender">{{g}}</option>
                         </select>
-                        <label for="gender">Gender</label>
-                        <select class="form-control" id="gender" name="gender" formControlName="gender">
-                            <option *ngFor = "let g of gender">{{g}}</option>
-                        </select>
-                    </div>
-
+                        <br>
+                        
 
                     <!-- MULTIPLE SELECT OPTIONS -->
 
                     <div class="form-group">
-
                         <label for="inputMobile"><b>MOBILE NUMBER</b></label>
-                        <input type="text" style="width:50%" class="form-control" id="inputMobile" placeholder="Enter Mobile No" required>
-
-                        <label for="mobile">Mobile No.</label>
-                        <input type="text" class="form-control" id="mobile" name="mobile" formControlName="mobile" placeholder="Enter Mobile No.">
+                        <input type="text" style="width:40%" class="form-control" id="mobile" name="mobile" formControlName="mobile" placeholder="Enter Mobile No.">
                         <span class="error" *ngIf="registerForm.controls.mobile.invalid && (registerForm.controls.mobile.touched && registerForm.controls.mobile.dirty)"> Type a valid 10 digit mobile no  </span>
-
                     </div>
                 <br>
 
@@ -184,33 +122,23 @@
                     <div class="form-check">
                         <label class="form-check-label">
 
-                            <input type="checkbox" class="form-check-input" required>
-                            
-
                             <input type="checkbox" class="form-check-input" id="tick" name="tick" formControlName="tick">
 
                             By registering an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
                         </label>
-                    </div>
-
-                    <br>
-                    <button type="Register" class="btn btn-primary text-center">REGISTER</button><br>
-                    
-                    <!-- Goto Login Page-->
-                    <br>
-                    <p> Already have an Account ? <a href="login.html" style="color:
-                    red"> <br><br><b>Login </b></a></p>
+                    </div><br>
 
 
                     <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button><br>
                     
                     <!-- Goto Login Page-->
                     <br>
-                    <p> Already have an Account ? <a routerLink="/Login" style="color:red"> Login </a></p>
+                    <p> Already have an Account ? <br> <br><a routerLink="/Login" style="color:red"> Login </a></p>
+                    </div>      
                 </form>
-            </div>
-        </div>
-    </div>
+                </div>
+                </div>
+                </div>
 
     <footer class="pt-3 bg-dark text-white" style="padding: 25px 20px;">
         <ul class="nav m-0">

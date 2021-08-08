@@ -12,6 +12,7 @@ import { LoanOffersComponent } from './loan-offers/loan-offers.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserDashComponent } from './user-dash/user-dash.component';
+import { AboutUsComponent } from './about-us/about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'ApplyLoanVehicle', component: ApplicationVehicleComponent},
   { path: 'UploadFiles', component: ApplicationFilesComponent},
   { path: 'EligibilityApplication', component: EligibilityApplicationComponent},
-  { path: 'EligibilityVehicle', component: EligibilityVehicleComponent}
+  { path: 'EligibilityVehicle', component: EligibilityVehicleComponent},
+  {path: 'Aboutus' , component:AboutUsComponent}
 
 
 ];
