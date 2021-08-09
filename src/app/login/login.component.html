@@ -59,29 +59,32 @@
         </div>
         <div class="container">
             <div class="jumbotron ">
-                <form>
+                <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
                     
                     <!-- LOGIN -->
 
                     <div class="form-group size">
                         <label for="inputName"><b>USERNAME</b></label>
-                        <input type="text"  style="width:50%" class="form-control" id="inputName" placeholder="Enter Username" required>
+                        <input type="text"  style="width:50%" class="form-control" id="uname" name="uname" #uname="ngModel" ngModel placeholder="Enter Username" required>
                     </div>
 
                     <div class="form-group">
                         <label for="inputPassword"><b>PASSWORD</b></label>
-                        <input type="password" style="width:50%" class="form-control" id="inputPassword" placeholder="Enter Password" required>
+                        <input type="password" style="width:50%" class="form-control" id="upassword" name="upassword" #upassword="ngModel" ngModel placeholder="Enter Password" required>
                     </div>
 
                     <!-- ADMIN CHECKBOX -->
 
                     <div class="form-group">
-                    <label>
-                        <input type="checkbox"  name="admin" style="margin-bottom:15px"> Admin
-                    </label>
+                    <label for="inputUser"><b>TYPE OF USER</b></label>
+                    <select class="form-control" style="width:40%" name="uadmin" #uadmin="ngModel" ngModel style="margin-bottom:15px">
+                      <option>admin</option>
+                      <option>user</option>
+                      
+                    </select>
                     </div>
 
-                    <button type="login"  class="btn btn-primary text-center">LOGIN</button><br>
+                    <button type="submit" value="Login" [disabled]="loginForm.invalid" class="btn btn-primary text-center">LOGIN</button><br>
 
                     <!-- Goto Register Page-->
                     <br>
