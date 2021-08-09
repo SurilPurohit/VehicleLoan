@@ -1,5 +1,3 @@
-import { NodeCompatibleEventEmitter } from "rxjs/internal/observable/fromEvent";
-
 export interface UserTables { 
   uname : string;
   uemail : string;

@@ -59,50 +59,50 @@
         </div>
         <div class="container">
             <div class="jumbotron">
-                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="registerForm" (ngSubmit)="post_api(registerForm.value)">
 
                     <div class="form-group">
                       <label for="inputName"><b>FULL NAME</b></label>
-                      <input type="text" style="width:40%" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter Full Name">
-                      <span class="error" *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.touched && registerForm.controls.name.dirty)"> Type a valid name </span>
+                      <input type="text" style="width:40%" class="form-control" id="rname" name="rname" formControlName="rname" placeholder="Enter Full Name">
+                      <span class="error" *ngIf="registerForm.controls.rname.invalid && (registerForm.controls.rname.touched && registerForm.controls.rname.dirty)"> Type a valid name </span>
                     </div>
 
                     <div class="form-group">
                       <label for="inputName"><b>USERNAME</b></label>
-                      <input type="text" style="width:40%" class="form-control" id="uname" name="uname" formControlName="uname" placeholder="Enter Username">
-                      <span class="error" *ngIf="registerForm.controls.uname.invalid && (registerForm.controls.uname.touched && registerForm.controls.uname.dirty)"> Type a valid user name </span>
+                      <input type="text" style="width:40%" class="form-control" id="runame" name="runame" formControlName="runame" placeholder="Enter Username">
+                      <span class="error" *ngIf="registerForm.controls.runame.invalid && (registerForm.controls.runame.touched && registerForm.controls.runame.dirty)"> Type a valid user name </span>
                     </div>
 
                     <div class="form-group">
                       <label for="inputEmail"><b>EMAIL ADDRESS</b></label>
-                      <input type="email" style="width:40%" class="form-control" id="email" name="email" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
-                      <span class="error" *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.touched && registerForm.controls.email.dirty)"> Type a valid Email ID </span>
+                      <input type="email" style="width:40%" class="form-control" id="remail" name="remail" formControlName="remail" aria-describedby="emailHelp" placeholder="Enter email">
+                      <span class="error" *ngIf="registerForm.controls.remail.invalid && (registerForm.controls.remail.touched && registerForm.controls.remail.dirty)"> Type a valid Email ID </span>
                     </div>
                     
                     <div class="form-group">
                         <label for="inputPassword"><b>PASSWORD</b></label>
-                        <input type="password" style="width:40%" class="form-control" id="password" name="password" formControlName="password" placeholder="Enter Password">
-                        <span class="error" *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.touched && registerForm.controls.password.dirty)"> Type a valid password </span>
+                        <input type="password" style="width:40%" class="form-control" id="rpassword" name="rpassword" formControlName="rpassword" placeholder="Enter Password">
+                        <span class="error" *ngIf="registerForm.controls.rpassword.invalid && (registerForm.controls.rpassword.touched && registerForm.controls.rpassword.dirty)"> Type a valid password </span>
                     </div>
 
                     <div class="form-group">
                       <label for="inputPassword"><b>CONFIRM PASSWORD</b></label>
-                      <input type="password" style="width:40%" class="form-control" id="cpassword" name="cpassword" formControlName="cpassword" placeholder="Re-Enter Password">
-                        <span class="error" *ngIf="registerForm.controls.cpassword.invalid && (registerForm.controls.cpassword.touched && registerForm.controls.cpassword.dirty)"> Passwords do not match </span>
+                      <input type="password" style="width:40%" class="form-control" id="rcpassword" name="rcpassword" formControlName="rcpassword" placeholder="Re-Enter Password">
+                        <span class="error" *ngIf="registerForm.controls.rcpassword.invalid && (registerForm.controls.rcpassword.touched && registerForm.controls.rcpassword.dirty)"> Passwords do not match </span>
                     </div>
 
                     <div class="form-group">
                         <label for="inputAge"><b>AGE</b></label>
-                        <input type="number" style="width:40%" class="form-control" id="age" name="age" formControlName="age" placeholder="Enter Age">
-                        <span class="error" *ngIf="registerForm.controls.age.invalid && (registerForm.controls.age.touched && registerForm.controls.age.dirty)"> Type a valid name </span>
+                        <input type="number" style="width:40%" class="form-control" id="rage" name="rage" formControlName="rage" placeholder="Enter Age">
+                        <span class="error" *ngIf="registerForm.controls.rage.invalid && (registerForm.controls.rage.touched && registerForm.controls.rage.dirty)"> Type a valid name </span>
                     </div>
 
                     <!-- DROPDOWN SELECT -->
 
                     <div class="form-group">
                         <label for="inputGender"><b>GENDER</b></label>
-                        <select class="form-control" style="width:40%" id="gender" name="gender" formControlName="gender">
-                          <option *ngFor = "let g of gender">{{g}}</option>
+                        <select class="form-control" style="width:40%" id="rgender" name="rgender" formControlName="rgender">
+                          <option *ngFor = "let g of rgender">{{g}}</option>
                         </select>
                         <br>
                         
@@ -111,8 +111,8 @@
 
                     <div class="form-group">
                         <label for="inputMobile"><b>MOBILE NUMBER</b></label>
-                        <input type="text" style="width:40%" class="form-control" id="mobile" name="mobile" formControlName="mobile" placeholder="Enter Mobile No.">
-                        <span class="error" *ngIf="registerForm.controls.mobile.invalid && (registerForm.controls.mobile.touched && registerForm.controls.mobile.dirty)"> Type a valid 10 digit mobile no  </span>
+                        <input type="text" style="width:40%" class="form-control" id="rmobile" name="rmobile" formControlName="rmobile" placeholder="Enter Mobile No.">
+                        <span class="error" *ngIf="registerForm.controls.rmobile.invalid && (registerForm.controls.rmobile.touched && registerForm.controls.rmobile.dirty)"> Type a valid 10 digit mobile no  </span>
                     </div>
                 <br>
 
@@ -128,9 +128,9 @@
                         </label>
                     </div><br>
 
-
-                    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button><br>
-                    
+                    <div class="form-check">
+                      <button type="submit" value="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button><br>
+                    </div>
                     <!-- Goto Login Page-->
                     <br>
                     <p> Already have an Account ? <br> <br><a routerLink="/Login" style="color:red"> Login </a></p>
