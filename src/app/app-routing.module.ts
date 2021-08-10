@@ -13,6 +13,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserDashComponent } from './user-dash/user-dash.component';
 import { AboutUsComponent } from './about-us/about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { TermsComponent } from './terms/terms.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -28,8 +32,11 @@ const routes: Routes = [
   { path: 'UploadFiles', component: ApplicationFilesComponent},
   { path: 'EligibilityApplication', component: EligibilityApplicationComponent},
   { path: 'EligibilityVehicle', component: EligibilityVehicleComponent},
-  {path: 'Aboutus' , component:AboutUsComponent}
-
+  { path: 'Aboutus' , component: AboutUsComponent},
+  { path: 'ContactUs', component: ContactUsComponent},
+  { path: 'Terms&Conditions', component: TermsComponent},
+  { path: 'Privacy', component: PrivacyComponent},
+  { path: 'Settings', component: UpdateProfileComponent}
 
 ];
 
