@@ -59,13 +59,20 @@
         </div>
         <div class="container">
             <div class="jumbotron">
-                <form acton="uploaddocuments.html">
+                <form [formGroup]="loanForm" (ngSubmit)="post_api(loanForm.value)">
+
+                    <h4 style="text-decoration: underline;"> USER DETAILS</h4><br>
+
+                    <div class="form-group">
+                        <label for="inputuser"><b>USER ID</b></label>
+                        <input type="number" class="form-control" id="userId" name="userId" formControlName="userId" placeholder="Enter user ID" required>
+                    </div>
 
                     <h4 style="text-decoration: underline;"> EMPLOYMENT DETAILS</h4><br>
 
                     <div class="form-group">
                         <label for="inputemp"><b>EMPLOYMENT TYPE</b></label>
-                        <select class="form-control" id="inputemp">
+                        <select class="form-control" id="employmentType" name="employmentType" formControlName="employmentType">
                             <option>Select</option>
                             <option>Government Employee</option>
                             <option>Private Employee</option>
@@ -75,22 +82,21 @@
                     
                     <div class="form-group">
                         <label for="inputsalary"><b>YEARLY SALARY</b></label>
-                        <select class="form-control" id="inputsalary">
-                            <option>Select</option>
-                            <option>5 LPA</option>
-                            <option>10 LPA</option>
-                            <option>15 LPA</option>
-                            <option>20 LPA</option>
-                            <option>25 LPA</option>
-                            <option>30 LPA</option>
-                            <option>35 LPA</option>
-                            <option>>35 LPA</option>
+                        <select class="form-control" id="annualSalary" name="annualSalary" formControlName="annualSalary">
+                            <option value="0">Select</option>
+                            <option value="5">5 LPA</option>
+                            <option value="10">10 LPA</option>
+                            <option value="15">15 LPA</option>
+                            <option value="20">20 LPA</option>
+                            <option value="25">25 LPA</option>
+                            <option value="30">30 LPA</option>
+                            <option value="35">35 LPA</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
                         <label for="inputemi"><b>EXISTING EMI</b></label>
-                        <select class="form-control" id="inputemi">
+                        <select class="form-control" id="existingEmi" name="existingEmi" formControlName="existingEmi">
                             <option>Nil</option>
                             <option>10,000</option>
                             <option>20,000</option>
@@ -107,7 +113,7 @@
 
                     <div class="form-group">
                         <label for="inputoem"><b>VEHICLE OEM</b></label>
-                        <select class="form-control" id="inputoem" required>
+                        <select class="form-control" id="carMake" name="carMake" formControlName="carMake" required>
                             <option>Select</option>
                             <option>Suzuki</option>
                             <option>Honda</option>
@@ -117,17 +123,17 @@
                     
                     <div class="form-group">
                         <label for="inputmodel"><b>VEHICLE MODEL</b></label>
-                        <input type="text" class="form-control" id="inputmodel" placeholder="Enter Vehicle Model" required>
+                        <input type="text" class="form-control" id="carModel" name="carModel" formControlName="carModel" placeholder="Enter Vehicle Model" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="inputexprice"><b>EX-SHOWROOM PRICE</b></label>
-                        <input type="number" class="form-control" id="inputexprice" placeholder="Enter Ex-Showroom Price" required>
+                        <input type="number" class="form-control" id="showroomPrice" name="showroomPrice" formControlName="showroomPrice" placeholder="Enter Ex-Showroom Price" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="inputprice"><b>ON-ROAD PRICE</b></label>
-                        <input type="number" class="form-control" id="inputprice" placeholder="Enter On-Road Price" required>
+                        <input type="number" class="form-control" id="onRoadPrice" name="onRoadPrice" formControlName="onRoadPrice" placeholder="Enter On-Road Price" required>
                     </div><br>
 
 
@@ -138,12 +144,12 @@
 
                     <div class="form-group">
                         <label for="inputloan"><b>LOAN AMOUNT</b></label>
-                        <input type="number" class="form-control" id="inputloan" placeholder="Enter Loan Amount" required>
+                        <input type="number" class="form-control" id="loanAmount" name="loanAmount" formControlName="loanAmount" placeholder="Enter Loan Amount" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputtenure"><b>VEHICLE OEM</b></label>
-                        <select class="form-control" id="inputtenure" required>
+                        <label for="inputtenure"><b>Loan Tenure(in months)</b></label>
+                        <select class="form-control" id="loanTenure" name="loanTenure" formControlName="loanTenure" required>
                             <option>Select</option>
                             <option>12</option>
                             <option>18</option>
@@ -159,7 +165,7 @@
 
                     <div class="form-group">
                         <label for="inputroi"><b>RATE OF INTEREST</b></label>
-                        <input type="number" class="form-control" id="inputroi" placeholder="Rate of Interest" value="8" disabled>
+                        <input type="number" class="form-control" placeholder="Rate of Interest" value="8" disabled>
                     </div><br>
                     
 
@@ -169,13 +175,13 @@
 
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" required>
+                            <input type="checkbox" class="form-check-input" id="tick" name="tick" formControlName="tick" required>
                             I hereby declare everything mentioned above is true.
                         </label>
                     </div><br>
 
 
-                    <button type="submit" class="btn btn-primary"><b>UPLOAD DOCUMENTS</b></button>
+                    <button type="submit" class="btn btn-primary" [disabled]="loanForm.invalid"><b>SUBMIT</b></button>
 
 
                 </form>

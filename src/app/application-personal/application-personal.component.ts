@@ -1,6 +1,7 @@
 import { createInjectorType } from '@angular/compiler/src/render3/r3_injector_compiler';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserTables } from '../Models/user/user';
 import { UserTableservice } from '../Services/user.service';
 
@@ -10,7 +11,6 @@ import { UserTableservice } from '../Services/user.service';
   styleUrls: ['./application-personal.component.css']
 })
 export class ApplicationPersonalComponent implements OnInit {
-
   ugender = ['Default','Male','Female','Others'];
   userForm = new FormGroup({
     uname : new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(15),Validators.pattern('^[a-zA-Z ]*$')]),
@@ -57,7 +57,7 @@ export class ApplicationPersonalComponent implements OnInit {
   update_id:number=0;
   delete_id:number=0;
 
-  constructor(private obj:UserTableservice) { }
+  constructor(private obj:UserTableservice,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -83,6 +83,7 @@ export class ApplicationPersonalComponent implements OnInit {
     this.msg="Successfully created "+data.uname;
     //Logging the response received from web api.
     console.log(data);
+    this.router.navigate(["/ApplyLoanVehicle"])
     })
   }
 
