@@ -84,6 +84,7 @@ export class RegistrationComponent implements OnInit {
     this.msg="Successfully created "+data.rname;
     //Logging the response received from web api.
     console.log(data);
+    alert("Please Note: Your Username is " + data.runame);
     this.router.navigate(['/Login']);
     })
   }

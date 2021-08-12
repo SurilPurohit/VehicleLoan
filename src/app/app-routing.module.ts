@@ -5,7 +5,6 @@ import { ApplicationFilesComponent } from './application-files/application-files
 import { ApplicationPersonalComponent } from './application-personal/application-personal.component';
 import { ApplicationVehicleComponent } from './application-vehicle/application-vehicle.component';
 import { EligibilityApplicationComponent } from './eligibility-application/eligibility-application.component';
-import { EligibilityVehicleComponent } from './eligibility-vehicle/eligibility-vehicle.component';
 import { EmiCalcComponent } from './emi-calc/emi-calc.component';
 import { HomeComponent } from './home/home.component';
 import { LoanOffersComponent } from './loan-offers/loan-offers.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
   { path: 'ApplyLoanVehicle', component: ApplicationVehicleComponent},
   { path: 'UploadFiles', component: ApplicationFilesComponent},
   { path: 'EligibilityApplication', component: EligibilityApplicationComponent},
-  { path: 'EligibilityVehicle', component: EligibilityVehicleComponent},
   { path: 'Aboutus' , component: AboutUsComponent},
   { path: 'ContactUs', component: ContactUsComponent},
   { path: 'Terms&Conditions', component: TermsComponent},
