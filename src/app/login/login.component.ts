@@ -24,12 +24,12 @@ export class LoginComponent implements OnInit {
     console.log(result);
     if(result=="user")
     {
-      localStorage.setItem("uadmin",form.value.uadmin);
+      localStorage.setItem("uname",form.value.uname);
       this.router.navigate(['/UserDashboard']);
     }
     else if(result=="admin")
     {
-      localStorage.setItem("uadmin",form.value.uadmin);
+      localStorage.setItem("uname",form.value.uname);
       this.router.navigate(['/AdminDashboard']);
     }
     else{
@@ -37,5 +37,4 @@ export class LoginComponent implements OnInit {
     }
     form.resetForm();
   }
-
 }

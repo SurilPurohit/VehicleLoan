@@ -39,7 +39,7 @@ export class ApplicationVehicleComponent implements OnInit {
     onRoadPrice : 0,
     loanAmount : 0,
     loanTenure : 0,
-    rateOfInterest : 0,
+    rateOfInterest : 8,
   }
   
   //Other required variables.

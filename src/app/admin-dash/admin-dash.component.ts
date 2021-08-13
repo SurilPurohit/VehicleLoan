@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashComponent implements OnInit {
 
+  uname:any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.uname = localStorage.getItem('uname');
   }
 
 }

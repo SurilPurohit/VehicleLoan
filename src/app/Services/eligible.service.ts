@@ -12,7 +12,7 @@ export class EligibleService {
   constructor(private http:HttpClient) { }
   
   //Variable to store the request URL for accessing API.
-  req:string="https://localhost:44363/api/EligibiltyTables";
+  req:string="https://localhost:44363/api/EligibilityTables";
 
   
   //Method to get the list of all players from the API.
@@ -21,11 +21,16 @@ export class EligibleService {
     return this.http.get<EligibleTables[]>(this.req);
   }
 
+  getEligibleTablesById(eligId:number):Observable<EligibleTables>
+  {
+    return this.http.get<EligibleTables>(this.req + "/"+ eligId);
+  }
+
   //Method  to create a new player.
   createUser(user:EligibleTables):Observable<EligibleTables>
   {
     console.log(user);
-    return this.http.post<EligibleTables>("https://localhost:44363/api/EligibilityTables/EligibiltyCheck",user,{
+    return this.http.post<EligibleTables>("https://localhost:44363/api/EligibilityTables/EligibilityCheck",user,{
       headers:new HttpHeaders({
         'Content-Type':'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin':'*',

@@ -16,6 +16,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { ClientsComponent } from './clients/clients.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'UserDashboard', component: UserDashComponent },
   { path: 'AdminDashboard', component: AdminDashComponent },
   { path: 'ApplyLoan', component: ApplicationPersonalComponent},
-  { path: 'LoanOffers', component: LoanOffersComponent},
+  { path: 'LoanOffers/:eligId', component: LoanOffersComponent},
   { path: 'ApplyLoanVehicle', component: ApplicationVehicleComponent},
   { path: 'UploadFiles', component: ApplicationFilesComponent},
   { path: 'EligibilityApplication', component: EligibilityApplicationComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'ContactUs', component: ContactUsComponent},
   { path: 'Terms&Conditions', component: TermsComponent},
   { path: 'Privacy', component: PrivacyComponent},
-  { path: 'Settings', component: UpdateProfileComponent}
+  { path: 'Settings', component: UpdateProfileComponent},
+  { path: 'Clients', component: ClientsComponent}
 
 ];
 

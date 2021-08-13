@@ -29,6 +29,7 @@ export class EligibilityApplicationComponent implements OnInit {
   elig : EligibleTables[] = [];
 
   eli : EligibleTables = {
+    eligId : 0,
     uname : "",
     carMake : "",
     carModel : "",
@@ -86,12 +87,13 @@ export class EligibilityApplicationComponent implements OnInit {
 
     //E= P*R[ ((1+R)^n)/ (((1+R)^n)-1)]
     var emi = p*r*(Math.pow((1+r),n) / ((Math.pow((1+r),n))-1));
-    if((data.age < 18 && data.age > 60) && data.existingEmi == "No" && emi > data.salary){
+    if((data.age > 17 && data.age < 60) && data.existingEmi == "No" && emi < data.salary){
       this.obj.createUser(data).subscribe(data=>{
       this.msg="Successfully created "+data.uname;
       //Logging the response received from web api.
       console.log(data);
-      this.router.navigate(["/ApplyLoan"])
+      this.router.navigate(["/LoanOffers/"+data.eligId])
+      console.log("elig id:"+data.eligId);
       })
     }else{
       console.log("EMI: "+emi);

@@ -7,10 +7,12 @@ import { LoginService } from '../Services/login.service';
   styleUrls: ['./user-dash.component.css']
 })
 export class UserDashComponent implements OnInit {
+  
+  uname:any;
   constructor(private loginService:LoginService) { }
 
   ngOnInit(): void {
-    
+    this.uname = localStorage.getItem('uname');
     this.loginService.GetAllLogins().subscribe(data=>{
       this.loginService.logins=data;
     });

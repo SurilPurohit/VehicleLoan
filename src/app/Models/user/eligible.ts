@@ -1,4 +1,5 @@
 export interface EligibleTables { 
+	eligId : number;
 	uname : string;
 	carMake : string;
 	carModel : string;

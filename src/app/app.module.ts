@@ -22,6 +22,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsComponent } from './terms/terms.component';
+import { ClientsComponent } from './clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { TermsComponent } from './terms/terms.component';
     UpdateProfileComponent,
     PrivacyComponent,
     ContactUsComponent,
-    TermsComponent
+    TermsComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Clients</title>
+</head>
+
+<body>
+<table class="table">
+    <tr>
+        <th>User ID</th>
+        <th>Employment Type</th>
+        <th>Annual Salary(in Lakhs)</th>
+        <th>Existing EMI</th>
+        <th>Car OEM</th>
+        <th>car Model</th>
+        <th>Showroom Price</th>
+        <th>On Road Price</th>
+        <th>Loan Amount</th>
+        <th>Loan Period(in months)</th>
+        <th>Rate Of Interest</th>
+    </tr>
+    <tr *ngFor="let g of loans">
+        <td>{{g.userId}}</td>
+        <td>{{g.employmentType}}</td>
+        <td>₹{{g.annualSalary}}</td>
+        <td>{{g.existingEmi}}</td>
+        <td>{{g.carMake}}</td>
+        <td>{{g.carModel}}</td>
+        <td>₹{{g.showroomPrice}}</td>
+        <td>₹{{g.onRoadPrice}}</td>
+        <td>₹{{g.loanAmount}}</td>
+        <td>{{g.loanTenure}}</td>
+        <td>{{g.rateOfInterest}}</td>
+        <td><button type="button" class="btn btn-success" (click)="onClick()">Approve</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="onClick()">Decline</button></td>
+    </tr>
+</table>

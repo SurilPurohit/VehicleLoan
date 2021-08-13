@@ -27,6 +27,7 @@ export class RegistrationComponent implements OnInit {
   registers:RegisterTables[] = [];
 
   register:RegisterTables = {
+    ruserId : 0,
     rname : "",
     runame : "",
     remail : "",
@@ -52,16 +53,8 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private obj:RegisterTablesService,private router: Router) {}
 
-  // constructor() {}
-  
-
   ngOnInit(): void {
   }
-
-  // submitForm()
-  // {
-  //   this.router.navigate(['/Login']);
-  // }
 
   get_api():void
   {

@@ -22,6 +22,12 @@ export class RegisterTablesService {
     return this.http.get<RegisterTables[]>(this.req);
   }
 
+  getUserTablesByName(username:string):Observable<RegisterTables>
+  {
+    return this.http.get<RegisterTables>(this.req + "/" + username);
+  }
+
+
   //Method  to create a new player.
   createUser(user:RegisterTables):Observable<RegisterTables>
   {
@@ -38,7 +44,7 @@ export class RegisterTablesService {
   //Method to update an existing player.
   updateUser(id:number,user:RegisterTables):Observable<any>
   {
-    
+    console.log(user);
     return this.http.put<any>(this.req+"/"+id,user,{
       headers:new HttpHeaders({
         'Content-Type':'application/json;charset=UTF-8',
