@@ -59,39 +59,44 @@
         </div>
         <div class="container">
             <div class="jumbotron">
-                <form>
+                <form [formGroup]="uploadForm" (ngSubmit)="post_api(uploadForm.value)">
                     <h4 style="text-decoration: underline;"> PERSONAL IDENTIFICATION</h4><br>  
                     <div class="form-group">
-                        <label for="aadhar"><b>UPLOAD AADHAR CARD</b></label><br><br>
-                        <input type="file" accept="application/pdf, image/gif, image/jpeg" id="aadhar" required>
+                      <label for="inputuser"><b>USER ID</b></label>
+                      <input type="number" class="form-control" id="userId" name="userId" formControlName="userId" placeholder="Enter user ID" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adhar"><b>UPLOAD AADHAR CARD</b></label><br><br>
+                        <input type="text" class="form-control" id="adhar" name="adhar" formControlName="adhar" placeholder="Enter 12 digit adhar number" required>
                     </div><br>
 
                     <div class="form-group">
                         <label for="pancard"><b>UPLOAD PAN CARD</b></label> <br><br>
-                        <input type="file" accept="application/pdf, image/gif, image/jpeg" id="pancard" required>
+                        <input type="text" class="form-control" id="pan" name="pan" formControlName="pan" placeholder="Enter 10 digit pan number" required>
                     </div><br>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="photo"><b>UPLOAD PHOTO</b></label> <br><br>
-                        <input type="file" accept="application/pdf, image/gif, image/jpeg" id="photo" required>
+                        <input type="file" accept="image/jpeg" id="photo" name="photo" formControlName="photo" required>
                     </div><br>
 
                     <div class="form-group">
                         <label for="salaryslip"><b>UPLOAD SALARY SLIP</b></label> <br><br>
-                        <input type="file" accept="application/pdf, image/gif, image/jpeg" id="Salary Slip" required>
-                    </div><br>
+                        <input type="file" accept="image/jpeg" id="salaryslip" name="salaryslip" formControlName="salaryslip" required>
+                    </div><br> -->
 
                     <!-- CHECK BUTTON -->
 
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" required>
+                            <input type="checkbox" class="form-check-input" id="tick" name="tick" formControlName="tick" required>
                             I hereby declare everything mentioned above is true.
                         </label>
                     </div><br>
 
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="uploadForm.invalid">Submit</button>
 
 
                 </form>
