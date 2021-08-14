@@ -10,4 +10,5 @@ export interface LoanTables {
 	loanAmount : number;
 	loanTenure : number;
 	rateOfInterest : number;
+	loanStatus : string;
 }  

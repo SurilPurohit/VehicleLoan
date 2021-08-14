@@ -23,6 +23,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsComponent } from './terms/terms.component';
 import { ClientsComponent } from './clients/clients.component';
+import { LoanStatusComponent } from './loan-status/loan-status.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ClientsComponent } from './clients/clients.component';
     PrivacyComponent,
     ContactUsComponent,
     TermsComponent,
-    ClientsComponent
+    ClientsComponent,
+    LoanStatusComponent
   ],
   imports: [
     BrowserModule,

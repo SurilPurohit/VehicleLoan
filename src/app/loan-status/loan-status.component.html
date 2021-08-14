@@ -27,7 +27,7 @@
         <th>Rate Of Interest</th>
         <th>Loan Status</th>
     </tr>
-    <tr *ngFor="let g of loans">
+    <!-- <tr *ngFor="let g of loan"> 
         <td>{{g.userId}}</td>
         <td>{{g.employmentType}}</td>
         <td>₹{{g.annualSalary}}</td>
@@ -38,14 +38,34 @@
         <td>₹{{g.onRoadPrice}}</td>
         <td>₹{{g.loanAmount}}</td>
         <td>{{g.loanTenure}}</td>
-        <td>{{g.rateOfInterest}}</td>
-        <td>
-            <select [(ngModel)]="loanStatus" name="loanStatus" >
-                <option value="Not Approved">Not Approved</option>
-                <option value="Approved">Approved</option>
-            </select>
-        </td>
+        <td>{{g.rateOfInterest}}</td> -->
         
+        <!-- <td>{{UserId}}</td>
+        <td>{{EmploymentType}}</td>
+        <td>₹{{AnnualSalary}}L</td>
+        <td>{{ExistingEmi}}</td>
+        <td>{{CarMake}}</td>
+        <td>{{CarModel}}</td>
+        <td>₹{{ShowroomPrice}}</td>
+        <td>₹{{OnRoadPrice}}</td>
+        <td>₹{{LoanAmount}}</td>
+        <td>{{LoanTenure}}</td>
+        <td>{{RateOfInterest}}</td> -->
+        
+    <!-- </tr> -->
+    
+    <tr>
+        <td>{{userId}}</td>
+        <td>{{employmentType}}</td>
+        <td>₹{{annualSalary}}L</td>
+        <td>{{existingEmi}}</td>
+        <td>{{carMake}}</td>
+        <td>{{carModel}}</td>
+        <td>₹{{showroomPrice}}</td>
+        <td>₹{{onRoadPrice}}</td>
+        <td>₹{{loanAmount}}</td>
+        <td>{{loanTenure}}</td>
+        <td>{{rateOfInterest}}</td>
+        <td>{{loanStatus}}</td>
     </tr>
-    <tr><td><button type="button" class="btn btn-success" (click)="onClick()">Update</button></td></tr>
 </table>

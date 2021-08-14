@@ -22,6 +22,12 @@ export class LoanService {
     return this.http.get<LoanTables[]>(this.req);
   }
 
+  getLoanTablesById(userid:number):Observable<LoanTables[]>
+  {
+    console.log(userid);
+    return this.http.get<LoanTables[]>(this.req + "/" + userid);
+  }
+
   //Method  to create a new player.
   createUser(user:LoanTables):Observable<LoanTables>
   {
@@ -37,10 +43,10 @@ export class LoanService {
   }
 
   //Method to update an existing player.
-  updateUser(id:number,user:LoanTables):Observable<any>
+  updateUser(user:any):Observable<any>
   {
-    
-    return this.http.put<any>(this.req+"/"+id,user,{
+    console.log(user);
+    return this.http.put<any>(this.req,user,{
       headers:new HttpHeaders({
         'Content-Type':'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin':'*',

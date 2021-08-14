@@ -11,6 +11,7 @@ import { UserTableservice } from '../Services/user.service';
   styleUrls: ['./application-personal.component.css']
 })
 export class ApplicationPersonalComponent implements OnInit {
+  userid:any;
   ugender = ['Default','Male','Female','Others'];
   userForm = new FormGroup({
     uname : new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(15),Validators.pattern('^[a-zA-Z ]*$')]),
@@ -30,6 +31,7 @@ export class ApplicationPersonalComponent implements OnInit {
 
   //Player object to be used in forms.
   user:UserTables={
+    userId : 0,
     uname : "",
     uemail : "",
     upassword : "",
@@ -81,6 +83,7 @@ export class ApplicationPersonalComponent implements OnInit {
   {
     this.obj.createUser(data).subscribe(data=>{
     this.msg="Successfully created "+data.uname;
+    this.userid = localStorage.setItem("userId",(String)(data.userId));
     //Logging the response received from web api.
     console.log(data);
     this.router.navigate(["/ApplyLoanVehicle"])
@@ -155,7 +158,7 @@ export function validAge(c:AbstractControl):ValidationErrors
   {
       return {'gt':true}
   }
-  else if(v > 55)
+  else if(v > 60)
     return {'gt':true}
   return {};
 }

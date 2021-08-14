@@ -17,6 +17,7 @@ import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ClientsComponent } from './clients/clients.component';
+import { LoanStatusComponent } from './loan-status/loan-status.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -36,8 +37,8 @@ const routes: Routes = [
   { path: 'Terms&Conditions', component: TermsComponent},
   { path: 'Privacy', component: PrivacyComponent},
   { path: 'Settings', component: UpdateProfileComponent},
-  { path: 'Clients', component: ClientsComponent}
-
+  { path: 'Clients', component: ClientsComponent},
+  { path: 'LoanStatus', component: LoanStatusComponent}
 ];
 
 @NgModule({

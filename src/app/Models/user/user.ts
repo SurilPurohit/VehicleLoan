@@ -1,4 +1,5 @@
 export interface UserTables { 
+  userId : number;
   uname : string;
   uemail : string;
   upassword : string;

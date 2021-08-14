@@ -27,7 +27,7 @@ export class ApplicationVehicleComponent implements OnInit {
   })
 
   loans : LoanTables[] = [];
-
+  userid : any;
   loan : LoanTables = {
     userId : 0,
     employmentType : "",
@@ -40,6 +40,7 @@ export class ApplicationVehicleComponent implements OnInit {
     loanAmount : 0,
     loanTenure : 0,
     rateOfInterest : 8,
+    loanStatus : "Not Approved",
   }
   
   //Other required variables.
@@ -60,6 +61,8 @@ export class ApplicationVehicleComponent implements OnInit {
   constructor(private obj:LoanService,private router: Router) { }
 
   ngOnInit(): void {
+    this.userid = localStorage.getItem('userId');
+    console.log(this.userid);
   }
 
   get_api():void
@@ -88,13 +91,13 @@ export class ApplicationVehicleComponent implements OnInit {
     })
   }
 
-  put_api(id:number,data:any):void
-  {
-    this.obj.updateUser(id,data).subscribe(data=>{
-      this.u_msg="Successfully updated Employee "+id;
-      console.log(data);
-    })
-  }
+  // put_api(id:number,data:any):void
+  // {
+  //   this.obj.updateUser(id,data).subscribe(data=>{
+  //     this.u_msg="Successfully updated Employee "+id;
+  //     console.log(data);
+  //   })
+  // }
   delete_api(id:number):void
   {
     this.obj.deleteUser(id).subscribe(data=>{
