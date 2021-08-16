@@ -18,6 +18,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ClientsComponent } from './clients/clients.component';
 import { LoanStatusComponent } from './loan-status/loan-status.component';
+import { RejectedListComponent } from './rejected-list/rejected-list.component';
+import { EmiSchedulerComponent } from './emi-scheduler/emi-scheduler.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -38,7 +40,9 @@ const routes: Routes = [
   { path: 'Privacy', component: PrivacyComponent},
   { path: 'Settings', component: UpdateProfileComponent},
   { path: 'Clients', component: ClientsComponent},
-  { path: 'LoanStatus', component: LoanStatusComponent}
+  { path: 'LoanStatus', component: LoanStatusComponent},
+  { path: 'RejectedList', component: RejectedListComponent},
+  { path: 'EmiScheduler', component: EmiSchedulerComponent}
 ];
 
 @NgModule({

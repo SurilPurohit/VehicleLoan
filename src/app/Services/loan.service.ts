@@ -43,10 +43,10 @@ export class LoanService {
   }
 
   //Method to update an existing player.
-  updateUser(user:any):Observable<any>
+  updateUser(user:LoanTables):Observable<any>
   {
     console.log(user);
-    return this.http.put<any>(this.req,user,{
+    return this.http.put<LoanTables>(this.req,user,{
       headers:new HttpHeaders({
         'Content-Type':'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin':'*',

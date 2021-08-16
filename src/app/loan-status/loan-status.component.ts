@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoanTables } from '../Models/user/loan';
 import { LoanService } from '../Services/loan.service';
 
@@ -25,10 +26,10 @@ export class LoanStatusComponent implements OnInit {
   loanStatus : string = "Not Approved";
   loan : any;
 
-  constructor(private obj:LoanService) { }
+  constructor(private obj:LoanService,private router: Router) { }
 
   ngOnInit(): void {
-    this.userid = 1;//localStorage.getItem('userId');
+    this.userid = localStorage.getItem('userId');
     // console.log(this.userid);
     this.get_api();
   }
@@ -76,6 +77,8 @@ export class LoanStatusComponent implements OnInit {
       
     // });
   }
-
+  onClickk(){
+    this.router.navigate(["/UserDashboard"]);
+  }
 
 }

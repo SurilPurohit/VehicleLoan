@@ -86,6 +86,7 @@ export class ApplicationPersonalComponent implements OnInit {
     this.userid = localStorage.setItem("userId",(String)(data.userId));
     //Logging the response received from web api.
     console.log(data);
+    alert("Your Loan ID is " + data.userId)
     this.router.navigate(["/ApplyLoanVehicle"])
     })
   }

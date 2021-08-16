@@ -24,6 +24,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsComponent } from './terms/terms.component';
 import { ClientsComponent } from './clients/clients.component';
 import { LoanStatusComponent } from './loan-status/loan-status.component';
+import { RejectedListComponent } from './rejected-list/rejected-list.component';
+import { EmiSchedulerComponent } from './emi-scheduler/emi-scheduler.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { LoanStatusComponent } from './loan-status/loan-status.component';
     ContactUsComponent,
     TermsComponent,
     ClientsComponent,
-    LoanStatusComponent
+    LoanStatusComponent,
+    RejectedListComponent,
+    EmiSchedulerComponent
   ],
   imports: [
     BrowserModule,

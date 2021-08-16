@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { LoanTables } from '../Models/user/loan';
 import { LoanService } from '../Services/loan.service';
 
@@ -8,11 +9,11 @@ import { LoanService } from '../Services/loan.service';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-
+  
   userid:any;
   u_msg:string="";
   loanStatus : string = "";
-  constructor(private obj:LoanService) { }
+  constructor(private obj:LoanService,private router: Router) { }
 
   ngOnInit(): void {
     this.userid = localStorage.getItem('userId');
@@ -59,13 +60,19 @@ export class ClientsComponent implements OnInit {
     })
   }
 
-  onClick(){
+  onClick(g:LoanTables){
     console.log("clicked");
-    for(let d of this.loans)
-    {
-      d.loanStatus = this.loanStatus;
-    }
-    console.log(this.loans);
-    this.put_api(this.loans);
+    // for(let d of this.loans)
+    // {
+      this.loan = g;
+      this.loan.loanStatus = this.loanStatus;
+      // d.loanStatus = this.loanStatus;
+    // }
+    console.log(this.loan);
+    this.put_api(this.loan);
+  }
+
+  onClickk(){
+    this.router.navigate(["/AdminDashboard"])
   }
 }

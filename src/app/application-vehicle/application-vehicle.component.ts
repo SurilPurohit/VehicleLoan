@@ -24,6 +24,7 @@ export class ApplicationVehicleComponent implements OnInit {
     loanAmount : new FormControl('',[Validators.required]),
     loanTenure : new FormControl('',[Validators.required]),
     tick : new FormControl('',[Validators.required]),
+    rateOfInterest : new FormControl('8')
   })
 
   loans : LoanTables[] = [];

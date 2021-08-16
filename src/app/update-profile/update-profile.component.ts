@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegisterTables } from '../Models/user/register';
 import { RegisterTablesService } from '../Services/register.service';
 
@@ -34,7 +35,7 @@ export class UpdateProfileComponent implements OnInit {
   };
 
   // userdata : RegisterTables = new ;
-  constructor(private obj:RegisterTablesService) { }
+  constructor(private obj:RegisterTablesService,private router:Router) { }
 
   ngOnInit(): void {
     this.name = localStorage.getItem('uname');
@@ -76,5 +77,9 @@ export class UpdateProfileComponent implements OnInit {
     this.userdata.rpassword = this.password;
     this.userdata.remail = this.email;
     this.put_api(this.userId,this.userdata);
+  }
+
+  onClickk(){
+    this.router.navigate(["/UserDashboard"]);
   }
 }

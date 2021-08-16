@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Forms</title>
+</head>
+
+<body>
+    <div class="container">
+            <br><br><br>
+        <div><br>
+            <h3>&nbsp; &nbsp;EMI CALCULATOR</h3>
+        </div><br>
+        <div class="container">
+            <div class="jumbotron">
+                <div class="form-group">
+                    <label for="amount"><b>Amount &nbsp;</b></label>
+                    <input type="number" [(ngModel)]="amount" (ngModelChange)="modelChanged($event)" placeholder="Loan Amount" value="{{amount}}">
+                </div>
+                <div class="form-group">
+                    <label for="rate"><b>Rate of Interest &nbsp;</b></label>
+                    <input type="number" [(ngModel)]="rate" (ngModelChange)="modelChanged($event)" placeholder="Interest Rate (%)" value="{{rate}}">
+                </div>
+                <div class="form-group">
+                    <label for="months"><b>Months &nbsp;</b></label>
+                    <input type="number" [(ngModel)]="month" (ngModelChange)="modelChanged($event)" placeholder="Loan Term (month)" value="{{month}}">
+                </div>
+                <p>EMI: {{emi | currency: 'INR'}}</p>
+                <p>Total Pay: {{total | currency: 'INR'}}</p>
+                <p>Difference: {{diff | currency: 'INR'}}</p>
+                
+        </div>
+    </div>
+    </div>
+    
+</body>
+
+</html>
+<button type="button" class="btn btn-success" (click)="onClickk()">Back To Dashboard</button>

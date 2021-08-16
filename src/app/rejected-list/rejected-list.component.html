@@ -27,7 +27,7 @@
         <th>Rate Of Interest</th>
         <th>Loan Status</th>
     </tr>
-    <tr *ngFor="let g of loans; let i=index;">
+    <tr *ngFor="let g of loanss">
         <td>{{g.userId}}</td>
         <td>{{g.employmentType}}</td>
         <td>₹{{g.annualSalary}}L</td>
@@ -40,13 +40,9 @@
         <td>{{g.loanTenure}}</td>
         <td>{{g.rateOfInterest}}</td>
         <td>
-            <select [(ngModel)]="loanStatus" name="loanStatus" id="loanStatus{{+i}}">
-                <option value="Not Approved">Not Approved</option>
-                <option value="Approved">Approved</option>
-            </select>
-            <!-- <select [(ngModel)]="loanStatus" -->
+            {{g.loanStatus}}
         </td>
-        <td><button type="button" class="btn btn-success" (click)="onClick(g)">Update</button></td>
+        <!-- <td><button type="button" class="btn btn-success" (click)="onClick(g)">Update</button></td> -->
     </tr>
-    <tr><button type="button" class="btn btn-success" (click)="onClickk()">Back To Dashboard</button></tr>
+    <!-- <tr></tr> -->
 </table>
