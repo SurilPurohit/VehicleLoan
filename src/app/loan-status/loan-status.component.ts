@@ -59,23 +59,6 @@ export class LoanStatusComponent implements OnInit {
       }
     });
     
-    // this.obj.getLoanTablesById(1).subscribe(data=>{
-      
-    //   this.loan = data;
-    //   console.log(this.loan);
-    //   // this.UserId = data[1].userId;
-    //   this.EmploymentType = data.employmentType;
-    //   console.log(this.EmploymentType);
-    //   this.AnnualSalary = data[1].annualSalary;
-    //   this.ExistingEmi = data[1].existingEmi;
-    //   this.CarMake = data[1].carMake;
-    //   this.CarModel = data[1].carModel;
-    //   this.ShowroomPrice = data[1].showroomPrice;
-    //   this.OnRoadPrice = data[1].onRoadPrice;
-    //   this.LoanAmount = data[1].loanAmount;
-    //   this.LoanTenure = data[1].loanTenure;
-      
-    // });
   }
   onClickk(){
     this.router.navigate(["/UserDashboard"]);

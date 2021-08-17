@@ -43,10 +43,6 @@ export class ClientsComponent implements OnInit {
       this.loans = data;
       console.log(this.loans);
     });
-    // this.obj.getLoanTablesById(5).subscribe(data=>{
-    //   this.loan = data;
-    //   console.log(this.loan);
-    // });
     console.log(this.loans);
   }
 
@@ -73,6 +69,6 @@ export class ClientsComponent implements OnInit {
   }
 
   onClickk(){
-    this.router.navigate(["/AdminDashboard"])
+    this.router.navigate(["/AdminDashboard"]);
   }
 }

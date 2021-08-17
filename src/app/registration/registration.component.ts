@@ -150,7 +150,7 @@ export function validAge(c:AbstractControl):ValidationErrors
   {
       return {'gt':true}
   }
-  else if(v > 100)
+  else if(v > 60)
     return {'gt':true}
   return {};
 }

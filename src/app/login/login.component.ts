@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/AdminDashboard']);
     }
     else{
+      alert("Invalid Username/password, please try again!");
       console.log("Invalid Credentials!");
     }
     form.resetForm();

@@ -92,13 +92,6 @@ export class ApplicationVehicleComponent implements OnInit {
     })
   }
 
-  // put_api(id:number,data:any):void
-  // {
-  //   this.obj.updateUser(id,data).subscribe(data=>{
-  //     this.u_msg="Successfully updated Employee "+id;
-  //     console.log(data);
-  //   })
-  // }
   delete_api(id:number):void
   {
     this.obj.deleteUser(id).subscribe(data=>{
